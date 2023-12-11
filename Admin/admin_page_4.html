@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNEAKER-ADMIN</title>
+
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- FontAwsome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Literata:wght@500;700&amp;family=Rubik:wght@400;500;700&amp;display=swap">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.2.0/css/all.css">
+
+    <!-- =========STYLE========== -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body style="background-color: #222;">
+    <!-- =========NAVIGATION========== -->
+    <div class="container-fluid">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="">
+                        <span class="icon"> <img src="imgs/405527018_720890046632552_6790314767571569590_n.jpg"
+                                width="60" height="60"></span> <!--style="width:500px;height:600px;-->
+                        <span class="title"> SNEAKER-ADMIN </span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="admin_state.html">
+                        <span class="icon">
+                            <ion-icon name="podium"></ion-icon>
+                        </span>
+                        <span class="title">Bảng điều khiển</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="admin_add.html">
+                        <span class="icon">
+                            <ion-icon name="bag-handle-outline"></ion-icon>
+                        </span>
+                        <span class="title">Quản lý sản phẩm</span> <!--Help-->
+                    </a>
+                </li>
+
+                <li>
+                    <a href="index2.html" target="_self">
+                        <span class="icon">
+                            <ion-icon name="people-outline"></ion-icon>
+                        </span>
+                        <span class="title">Quản lý khách hàng </span> <!--Customers-->
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="admin_order.html">
+                        <span class="icon">
+
+                            <ion-icon name="cube-outline"></ion-icon>
+                        </span>
+                        <span class="title">Quản lý đơn hàng</span>
+                    </a>
+                </li>
+
+                
+            </ul>
+        </div>
+
+
+
+        <!-- =======Main======= -->
+
+        <div class="main">
+            <div class="text-center mt-2 mb-3">
+                <h1>Quản Lý Sản Phẩm</h1>
+            </div>
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+
+            </div>
+
+            
+
+            <!-- =======Form add======= -->
+
+            <div class="col-12">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <div class="container">
+                        <div class="collapse navbar-collapse" id="navbarResponsive">
+                            <ul class="navbar-nav ml-auto">
+    
+                                <!-- Phần thêm sản phẩm -->
+                                <li class="nav-item">
+                                    <a class="nav-link" href="admin_add.html" style="margin-top: 2.5px;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"
+                                            viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.-->
+                                            <path
+                                                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM232 344V280H168c-13.3 0-24-10.7-24-24s10.7-24 24-24h64V168c0-13.3 10.7-24 24-24s24 10.7 24 24v64h64c13.3 0 24 10.7 24 24s-10.7 24-24 24H280v64c0 13.3-10.7 24-24 24s-24-10.7-24-24z" />
+                                        </svg>
+                                    </a>
+                                </li>
+    
+                                <!-- Phần sửa / xoá sản phẩm -->
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#" style="margin-top: 2.5px;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"
+                                            viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.-->
+                                            <path
+                                                d="M0 416c0 17.7 14.3 32 32 32l54.7 0c12.3 28.3 40.5 48 73.3 48s61-19.7 73.3-48L480 448c17.7 0 32-14.3 32-32s-14.3-32-32-32l-246.7 0c-12.3-28.3-40.5-48-73.3-48s-61 19.7-73.3 48L32 384c-17.7 0-32 14.3-32 32zm128 0a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zM320 256a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm32-80c-32.8 0-61 19.7-73.3 48L32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l246.7 0c12.3 28.3 40.5 48 73.3 48s61-19.7 73.3-48l54.7 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-54.7 0c-12.3-28.3-40.5-48-73.3-48zM192 128a32 32 0 1 1 0-64 32 32 0 1 1 0 64zm73.3-64C253 35.7 224.8 16 192 16s-61 19.7-73.3 48L32 64C14.3 64 0 78.3 0 96s14.3 32 32 32l86.7 0c12.3 28.3 40.5 48 73.3 48s61-19.7 73.3-48L480 128c17.7 0 32-14.3 32-32s-14.3-32-32-32L265.3 64z" />
+                                        </svg>
+    
+    
+                                    </a>
+                                </li>
+    
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class="product-manager" id="product-manager">
+
+                    <div class="notification offset-9">
+                        <div class="notification-content" id="notifi">
+                            <p id="notifi-content"></p>
+                        </div>
+                    </div>
+
+                    
+
+                    <div class="tab container">
+                        <!-- Search form -->
+                        <div class="d-flex offset-8 col-md-4 mb-3">
+                            <input type="text" name="search" id="search" class="search"
+                                placeholder="Nhập Tên Sản Phẩm ...">
+
+                            <!-- Nút tìm kiếm -->
+                            <a href="admin_page_1.html">
+                            <button data-toggle="collapse" data-target="#demo1" class="accordion-toggle"
+                                class="btn btn-default btn-xs" style="background: none; border: none;">
+                                <i class="fab fa-searchengin fa-lg"></i>
+                            </button></a>
+                        </div>
+
+                        <table class="table table-bordered text-center">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col" class="md">Hình ảnh</th>
+                                    <th scope="col" class="md_1">Tên Sản Phẩm</th>
+                                    <th scope="col" class="md">Danh Mục</th>
+                                    <th scope="col" class="md">Giá Tiền</th>
+                                    <th scope="col" class="md">Màu</th>
+                                    <th scope="col" class="md_1">Số Lượng</th>
+                                    <th scope="col" class="lg">Nội dung</th>
+                                    <th scope="col"></th>
+
+                                </tr>
+                            </thead>
+                        </table>
+
+                        <div class="accordian-body">
+                            <table class="table table-bordered">
+
+                                <!-- Phần hiển thị mặc định -->
+                                <!-- GIÀY ADIDAS SLEEK NỮ TRẮNG CAM -->
+                                <tr id="sp_16">
+                                    <!-- Ảnh sản phẩm -->
+                                    <td class="md">
+                                        <img class="w100 h-100" style="width: 75px; height: 75px !important;"
+                                            src="imgs/ADMIN/ADIDAS/20220303_IDlxxkYAauoThWAdrjUUtv56.jpeg" alt="" id="image_16">
+                                    </td>
+
+                                    <!-- Tên sản phẩm -->
+                                    <td class="md_1">GIÀY ADIDAS SLEEK NỮ TRẮNG CAM</td>
+
+                                    <!-- Danh mục -->
+                                    <td class="md">Adidas</td>
+
+                                    <!-- Giá tiền -->
+                                    <td class="md">1,650,000 VND</td>
+
+                                    <!-- Màu sắc -->
+                                    <td class="md">TRẮNG</td>
+
+                                    <!-- Số lượng -->
+                                    <td class="md_1">20 đôi size 41, 20 đôi size 40,20 đôi size 39</td>
+
+                                    <!-- Nội dung -->
+                                    <td class="lg">
+                                        <p>Bạn đang tìm kiếm cho mình một đôi giày sẽ có thể trường tồn với thời gian, không bị lỗi mốt theo năm tháng. Adidas Sleek là 1 lựa chọn không nên bỏ lỡ . Kiểu dáng thiết kế trẻ trung, màu sắc tươi sắc giúp đa dạng được với nhiều kiểu Outfit khác nhau.</p>
+                                    </td>
+
+                                    <!-- Nút thêm xoá sửa -->
+                                    <td>
+                                        <!-- Nút sửa -->
+                                        <button data-toggle="collapse" data-target="#demo2" class="accordion-toggle"
+                                            class="btn btn-default btn-xs" style="background: none; border: none;">
+                                            <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M495.9 166.6c3.2 8.7 .5 18.4-6.4 24.6l-43.3 39.4c1.1 8.3 1.7 16.8 1.7 25.4s-.6 17.1-1.7 25.4l43.3 39.4c6.9 6.2 9.6 15.9 6.4 24.6c-4.4 11.9-9.7 23.3-15.8 34.3l-4.7 8.1c-6.6 11-14 21.4-22.1 31.2c-5.9 7.2-15.7 9.6-24.5 6.8l-55.7-17.7c-13.4 10.3-28.2 18.9-44 25.4l-12.5 57.1c-2 9.1-9 16.3-18.2 17.8c-13.8 2.3-28 3.5-42.5 3.5s-28.7-1.2-42.5-3.5c-9.2-1.5-16.2-8.7-18.2-17.8l-12.5-57.1c-15.8-6.5-30.6-15.1-44-25.4L83.1 425.9c-8.8 2.8-18.6 .3-24.5-6.8c-8.1-9.8-15.5-20.2-22.1-31.2l-4.7-8.1c-6.1-11-11.4-22.4-15.8-34.3c-3.2-8.7-.5-18.4 6.4-24.6l43.3-39.4C64.6 273.1 64 264.6 64 256s.6-17.1 1.7-25.4L22.4 191.2c-6.9-6.2-9.6-15.9-6.4-24.6c4.4-11.9 9.7-23.3 15.8-34.3l4.7-8.1c6.6-11 14-21.4 22.1-31.2c5.9-7.2 15.7-9.6 24.5-6.8l55.7 17.7c13.4-10.3 28.2-18.9 44-25.4l12.5-57.1c2-9.1 9-16.3 18.2-17.8C227.3 1.2 241.5 0 256 0s28.7 1.2 42.5 3.5c9.2 1.5 16.2 8.7 18.2 17.8l12.5 57.1c15.8 6.5 30.6 15.1 44 25.4l55.7-17.7c8.8-2.8 18.6-.3 24.5 6.8c8.1 9.8 15.5 20.2 22.1 31.2l4.7 8.1c6.1 11 11.4 22.4 15.8 34.3zM256 336a80 80 0 1 0 0-160 80 80 0 1 0 0 160z"/></svg>
+                                        </button>
+                                        <br><br>
+                                        <button class="btn btn-default btn-xs" style="background: none; border: none;" id="delete" onclick="Delete_16()">
+                                            <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
+                                              </svg>
+                                              
+                                        </button>
+                                    </td>
+
+
+                                </tr>
+
+                                <!-- Phần sửa -->
+                                <tr class="accordian-body collapse" id="demo2">
+                                    <td class="md" style="vertical-align: middle;">
+                                        <button onclick="DeleteImg_16()" type="submit" style="background-color: #222; color: white; border-radius: 10px; font-size: 12px; font-weight: 700; width: 60px;">Xoá ảnh</button>
+                                        <br><br>
+                                        <input type="file" id="file" />
+                                        <label for="file" class="btn-2">upload</label>
+                                    </td>
+                                    <td class="md_1">
+                                        <textarea id="content" name="content" rows="5" cols="20"></textarea>
+                                    </td>
+                                    <td class="md">
+                                        <textarea id="content" name="content" rows="5" cols="20"></textarea>
+                                    </td>
+                                    <td class="md">
+                                        <textarea id="content" name="content" rows="5" cols="20"></textarea>
+                                    </td>
+                                    <td class="md">
+                                        <textarea id="content" name="content" rows="5" cols="20"></textarea>
+                                    </td>
+                                    <td class="md_1">
+                                        <textarea id="content" name="content" rows="5" cols="20"></textarea>
+                                    </td>
+                                    <td class="lg">
+                                        <textarea id="content" name="content" rows="5" cols="20"></textarea>
+                                    </td>
+                                    <td style="vertical-align: middle;">
+                                        <button onclick="Change()" type="submit" style="background-color: #222; color: white; border-radius: 10px; font-size: 12px;">Hoàn thành</button>
+                                    </td>
+                                </tr>
+
+
+
+
+                                <!-- Phần hiển thị mặc định -->
+                                <!-- GIÀY ADIDAS EDGE LUX NỮ - XÁM -->
+                                <tr id="sp_17">
+                                    <!-- Ảnh sản phẩm -->
+                                    <td class="md">
+                                        <img class="w100 h-100" style="width: 75px; height: 75px !important;"
+                                            src="imgs/ADMIN/ADIDAS/20220303_1tsXJuewG4HK6eP86jKYQ7Zo.jpeg" alt="" id="image_17">
+                                    </td>
+
+                                    <!-- Tên sản phẩm -->
+                                    <td class="md_1">GIÀY ADIDAS EDGE LUX NỮ - XÁM</td>
+
+                                    <!-- Danh mục -->
+                                    <td class="md">Adidas</td>
+
+                                    <!-- Giá tiền -->
+                                    <td class="md">1,650,000 VND</td>
+
+                                    <!-- Màu sắc -->
+                                    <td class="md">XÁM</td>
+
+                                    <!-- Số lượng -->
+                                    <td class="md_1">20 đôi size 41, 20 đôi size 40,20 đôi size 39</td>
+
+                                    <!-- Nội dung -->
+                                    <td class="lg">
+                                        <p>Được thừa hưởng kiểu dáng nguyên bản từ các phiên bản trước. Thiết kế thon gọn cùng các đường cut out tinh tế của thương hiệu đến từ nước Đức. Đây chắc chắn sẽ là mẫu giày đa zi năng mà bạn không nên bỏ sót.</p>
+                                    </td>
+
+                                    <!-- Nút thêm xoá sửa -->
+                                    <td>
+                                        <!-- Nút sửa -->
+                                        <button data-toggle="collapse" data-target="#demo3" class="accordion-toggle"
+                                            class="btn btn-default btn-xs" style="background: none; border: none;">
+                                            <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M495.9 166.6c3.2 8.7 .5 18.4-6.4 24.6l-43.3 39.4c1.1 8.3 1.7 16.8 1.7 25.4s-.6 17.1-1.7 25.4l43.3 39.4c6.9 6.2 9.6 15.9 6.4 24.6c-4.4 11.9-9.7 23.3-15.8 34.3l-4.7 8.1c-6.6 11-14 21.4-22.1 31.2c-5.9 7.2-15.7 9.6-24.5 6.8l-55.7-17.7c-13.4 10.3-28.2 18.9-44 25.4l-12.5 57.1c-2 9.1-9 16.3-18.2 17.8c-13.8 2.3-28 3.5-42.5 3.5s-28.7-1.2-42.5-3.5c-9.2-1.5-16.2-8.7-18.2-17.8l-12.5-57.1c-15.8-6.5-30.6-15.1-44-25.4L83.1 425.9c-8.8 2.8-18.6 .3-24.5-6.8c-8.1-9.8-15.5-20.2-22.1-31.2l-4.7-8.1c-6.1-11-11.4-22.4-15.8-34.3c-3.2-8.7-.5-18.4 6.4-24.6l43.3-39.4C64.6 273.1 64 264.6 64 256s.6-17.1 1.7-25.4L22.4 191.2c-6.9-6.2-9.6-15.9-6.4-24.6c4.4-11.9 9.7-23.3 15.8-34.3l4.7-8.1c6.6-11 14-21.4 22.1-31.2c5.9-7.2 15.7-9.6 24.5-6.8l55.7 17.7c13.4-10.3 28.2-18.9 44-25.4l12.5-57.1c2-9.1 9-16.3 18.2-17.8C227.3 1.2 241.5 0 256 0s28.7 1.2 42.5 3.5c9.2 1.5 16.2 8.7 18.2 17.8l12.5 57.1c15.8 6.5 30.6 15.1 44 25.4l55.7-17.7c8.8-2.8 18.6-.3 24.5 6.8c8.1 9.8 15.5 20.2 22.1 31.2l4.7 8.1c6.1 11 11.4 22.4 15.8 34.3zM256 336a80 80 0 1 0 0-160 80 80 0 1 0 0 160z"/></svg>
+                                        </button>
+                                        <br><br>
+                                        <button class="btn btn-default btn-xs" style="background: none; border: none;" id="delete" onclick="Delete_17()">
+                                            <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
+                                              </svg>
+                                              
+                                        </button>
+                                    </td>
+
+
+                                </tr>
+
+                                <!-- Phần sửa -->
+                                <tr class="accordian-body collapse" id="demo3">
+                                    <td class="md" style="vertical-align: middle;">
+                                        <button onclick="DeleteImg_17()" type="submit" style="background-color: #222; color: white; border-radius: 10px; font-size: 12px; font-weight: 700; width: 60px;">Xoá ảnh</button>
+                                        <br><br>
+                                        <input type="file" id="file" />
+                                        <label for="file" class="btn-2">upload</label>
+                                    </td>
+                                    <td class="md_1">
+                                        <textarea id="content" name="content" rows="5" cols="20"></textarea>
+                                    </td>
+                                    <td class="md">
+                                        <textarea id="content" name="content" rows="5" cols="20"></textarea>
+                                    </td>
+                                    <td class="md">
+                                        <textarea id="content" name="content" rows="5" cols="20"></textarea>
+                                    </td>
+                                    <td class="md">
+                                        <textarea id="content" name="content" rows="5" cols="20"></textarea>
+                                    </td>
+                                    <td class="md_1">
+                                        <textarea id="content" name="content" rows="5" cols="20"></textarea>
+                                    </td>
+                                    <td class="lg">
+                                        <textarea id="content" name="content" rows="5" cols="20"></textarea>
+                                    </td>
+                                    <td style="vertical-align: middle;">
+                                        <button onclick="Change()" type="submit" style="background-color: #222; color: white; border-radius: 10px; font-size: 12px;">Hoàn thành</button>
+                                    </td>
+                                </tr>
+
+
+
+
+                                <!-- Phần hiển thị mặc định -->
+                                <!-- GIÀY ADIDAS FALCON RUN M NAM XANH NAVY -->
+                                <tr id="sp_18">
+                                    <!-- Ảnh sản phẩm -->
+                                    <td class="md">
+                                        <img class="w100 h-100" style="width: 75px; height: 75px !important;"
+                                            src="imgs/ADMIN/ADIDAS/20220303_7LYmgPPVSmaKDEgg8Grj4tEn.jpeg" alt="" id="image_18">
+                                    </td>
+
+                                    <!-- Tên sản phẩm -->
+                                    <td class="md_1">GIÀY ADIDAS FALCON RUN M NAM XANH NAVY</td>
+
+                                    <!-- Danh mục -->
+                                    <td class="md">Adidas</td>
+
+                                    <!-- Giá tiền -->
+                                    <td class="md">1,650,000 VND</td>
+
+                                    <!-- Màu sắc -->
+                                    <td class="md">TRẮNG</td>
+
+                                    <!-- Số lượng -->
+                                    <td class="md_1">20 đôi size 41, 20 đôi size 40,20 đôi size 39</td>
+
+                                    <!-- Nội dung -->
+                                    <td class="lg">
+                                        <p>Một mẫu giày đáng mua nhất năm 2020 của Adidas- Adidas Falcon Run M. Form dáng thiết kế trẻ trung, khỏe khoắn, ôm sát bàn chân. Đế bounce sẽ là người bạn tốt đồng hành với bạn trên mọi chặng đường. Cùng với mức giá không thể hợp lý hơn. Gió mùa lại đang cận kề,còn chần chờ gì nữa thêm em nó vào Bộ Sưu Tập của mình ngay đi !</p>
+                                    </td>
+
+                                    <!-- Nút thêm xoá sửa -->
+                                    <td>
+                                        <!-- Nút sửa -->
+                                        <button data-toggle="collapse" data-target="#demo4" class="accordion-toggle"
+                                            class="btn btn-default btn-xs" style="background: none; border: none;">
+                                            <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M495.9 166.6c3.2 8.7 .5 18.4-6.4 24.6l-43.3 39.4c1.1 8.3 1.7 16.8 1.7 25.4s-.6 17.1-1.7 25.4l43.3 39.4c6.9 6.2 9.6 15.9 6.4 24.6c-4.4 11.9-9.7 23.3-15.8 34.3l-4.7 8.1c-6.6 11-14 21.4-22.1 31.2c-5.9 7.2-15.7 9.6-24.5 6.8l-55.7-17.7c-13.4 10.3-28.2 18.9-44 25.4l-12.5 57.1c-2 9.1-9 16.3-18.2 17.8c-13.8 2.3-28 3.5-42.5 3.5s-28.7-1.2-42.5-3.5c-9.2-1.5-16.2-8.7-18.2-17.8l-12.5-57.1c-15.8-6.5-30.6-15.1-44-25.4L83.1 425.9c-8.8 2.8-18.6 .3-24.5-6.8c-8.1-9.8-15.5-20.2-22.1-31.2l-4.7-8.1c-6.1-11-11.4-22.4-15.8-34.3c-3.2-8.7-.5-18.4 6.4-24.6l43.3-39.4C64.6 273.1 64 264.6 64 256s.6-17.1 1.7-25.4L22.4 191.2c-6.9-6.2-9.6-15.9-6.4-24.6c4.4-11.9 9.7-23.3 15.8-34.3l4.7-8.1c6.6-11 14-21.4 22.1-31.2c5.9-7.2 15.7-9.6 24.5-6.8l55.7 17.7c13.4-10.3 28.2-18.9 44-25.4l12.5-57.1c2-9.1 9-16.3 18.2-17.8C227.3 1.2 241.5 0 256 0s28.7 1.2 42.5 3.5c9.2 1.5 16.2 8.7 18.2 17.8l12.5 57.1c15.8 6.5 30.6 15.1 44 25.4l55.7-17.7c8.8-2.8 18.6-.3 24.5 6.8c8.1 9.8 15.5 20.2 22.1 31.2l4.7 8.1c6.1 11 11.4 22.4 15.8 34.3zM256 336a80 80 0 1 0 0-160 80 80 0 1 0 0 160z"/></svg>
+                                        </button>
+                                        <br><br>
+                                        <button class="btn btn-default btn-xs" style="background: none; border: none;" id="delete" onclick="Delete_18()">
+                                            <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
+                                              </svg>
+                                              
+                                        </button>
+                                    </td>
+
+
+                                </tr>
+
+                                <!-- Phần sửa -->
+                                <tr class="accordian-body collapse" id="demo4">
+                                    <td class="md" style="vertical-align: middle;">
+                                        <button onclick="DeleteImg_18()" type="submit" style="background-color: #222; color: white; border-radius: 10px; font-size: 12px; font-weight: 700; width: 60px;">Xoá ảnh</button>
+                                        <br><br>
+                                        <input type="file" id="file" />
+                                        <label for="file" class="btn-2">upload</label>
+                                    </td>
+                                    <td class="md_1">
+                                        <textarea id="content" name="content" rows="5" cols="20"></textarea>
+                                    </td>
+                                    <td class="md">
+                                        <textarea id="content" name="content" rows="5" cols="20"></textarea>
+                                    </td>
+                                    <td class="md">
+                                        <textarea id="content" name="content" rows="5" cols="20"></textarea>
+                                    </td>
+                                    <td class="md">
+                                        <textarea id="content" name="content" rows="5" cols="20"></textarea>
+                                    </td>
+                                    <td class="md_1">
+                                        <textarea id="content" name="content" rows="5" cols="20"></textarea>
+                                    </td>
+                                    <td class="lg">
+                                        <textarea id="content" name="content" rows="5" cols="20"></textarea>
+                                    </td>
+                                    <td style="vertical-align: middle;">
+                                        <button onclick="Change()" type="submit" style="background-color: #222; color: white; border-radius: 10px; font-size: 12px;">Hoàn thành</button>
+                                    </td>
+                                </tr>
+
+
+
+                                <!-- Phần hiển thị mặc định -->
+                                <!-- GIÀY ADIDAS SLEEK NỮ TRẮNG TÍM -->
+                                <tr id="sp_19">
+                                    <!-- Ảnh sản phẩm -->
+                                    <td class="md">
+                                        <img class="w100 h-100" style="width: 75px; height: 75px !important;"
+                                            src="imgs/ADMIN/ADIDAS/20220303_bAFAzVCWs6hZVj0bZO6ai6tL.jpeg" alt="" id="image_19">
+                                    </td>
+
+                                    <!-- Tên sản phẩm -->
+                                    <td class="md_1">GIÀY ADIDAS SLEEK NỮ TRẮNG TÍM</td>
+
+                                    <!-- Danh mục -->
+                                    <td class="md">Adidas</td>
+
+                                    <!-- Giá tiền -->
+                                    <td class="md">3.000.000 VND</td>
+
+                                    <!-- Màu sắc -->
+                                    <td class="md">TRẮNG</td>
+
+                                    <!-- Số lượng -->
+                                    <td class="md_1">20 đôi size 41, 20 đôi size 40,20 đôi size 39</td>
+
+                                    <!-- Nội dung -->
+                                    <td class="lg">
+                                        <p>Bạn đang tìm kiếm cho mình một đôi giày sẽ có thể trường tồn với thời gian, không bị lỗi mốt theo năm tháng. Adidas Sleek là 1 lựa chọn không nên bỏ lỡ . Kiểu dáng thiết kế trẻ trung, màu sắc tươi sắc giúp đa dạng được với nhiều kiểu Outfit khác nhau.</p>
+                                    </td>
+
+                                    <!-- Nút thêm xoá sửa -->
+                                    <td>
+                                        <!-- Nút sửa -->
+                                        <button data-toggle="collapse" data-target="#demo5" class="accordion-toggle"
+                                            class="btn btn-default btn-xs" style="background: none; border: none;">
+                                            <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M495.9 166.6c3.2 8.7 .5 18.4-6.4 24.6l-43.3 39.4c1.1 8.3 1.7 16.8 1.7 25.4s-.6 17.1-1.7 25.4l43.3 39.4c6.9 6.2 9.6 15.9 6.4 24.6c-4.4 11.9-9.7 23.3-15.8 34.3l-4.7 8.1c-6.6 11-14 21.4-22.1 31.2c-5.9 7.2-15.7 9.6-24.5 6.8l-55.7-17.7c-13.4 10.3-28.2 18.9-44 25.4l-12.5 57.1c-2 9.1-9 16.3-18.2 17.8c-13.8 2.3-28 3.5-42.5 3.5s-28.7-1.2-42.5-3.5c-9.2-1.5-16.2-8.7-18.2-17.8l-12.5-57.1c-15.8-6.5-30.6-15.1-44-25.4L83.1 425.9c-8.8 2.8-18.6 .3-24.5-6.8c-8.1-9.8-15.5-20.2-22.1-31.2l-4.7-8.1c-6.1-11-11.4-22.4-15.8-34.3c-3.2-8.7-.5-18.4 6.4-24.6l43.3-39.4C64.6 273.1 64 264.6 64 256s.6-17.1 1.7-25.4L22.4 191.2c-6.9-6.2-9.6-15.9-6.4-24.6c4.4-11.9 9.7-23.3 15.8-34.3l4.7-8.1c6.6-11 14-21.4 22.1-31.2c5.9-7.2 15.7-9.6 24.5-6.8l55.7 17.7c13.4-10.3 28.2-18.9 44-25.4l12.5-57.1c2-9.1 9-16.3 18.2-17.8C227.3 1.2 241.5 0 256 0s28.7 1.2 42.5 3.5c9.2 1.5 16.2 8.7 18.2 17.8l12.5 57.1c15.8 6.5 30.6 15.1 44 25.4l55.7-17.7c8.8-2.8 18.6-.3 24.5 6.8c8.1 9.8 15.5 20.2 22.1 31.2l4.7 8.1c6.1 11 11.4 22.4 15.8 34.3zM256 336a80 80 0 1 0 0-160 80 80 0 1 0 0 160z"/></svg>
+                                        </button>
+                                        <br><br>
+                                        <button class="btn btn-default btn-xs" style="background: none; border: none;" id="delete" onclick="Delete_19()">
+                                            <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
+                                              </svg>
+                                              
+                                        </button>
+                                    </td>
+
+
+                                </tr>
+
+                                <!-- Phần sửa -->
+                                <tr class="accordian-body collapse" id="demo5">
+                                    <td class="md" style="vertical-align: middle;">
+                                        <button onclick="DeleteImg_19()" type="submit" style="background-color: #222; color: white; border-radius: 10px; font-size: 12px; font-weight: 700; width: 60px;">Xoá ảnh</button>
+                                        <br><br>
+                                        <input type="file" id="file" />
+                                        <label for="file" class="btn-2">upload</label>
+                                    </td>
+                                    <td class="md_1">
+                                        <textarea id="content" name="content" rows="5" cols="20"></textarea>
+                                    </td>
+                                    <td class="md">
+                                        <textarea id="content" name="content" rows="5" cols="20"></textarea>
+                                    </td>
+                                    <td class="md">
+                                        <textarea id="content" name="content" rows="5" cols="20"></textarea>
+                                    </td>
+                                    <td class="md">
+                                        <textarea id="content" name="content" rows="5" cols="20"></textarea>
+                                    </td>
+                                    <td class="md_1">
+                                        <textarea id="content" name="content" rows="5" cols="20"></textarea>
+                                    </td>
+                                    <td class="lg">
+                                        <textarea id="content" name="content" rows="5" cols="20"></textarea>
+                                    </td>
+                                    <td style="vertical-align: middle;">
+                                        <button onclick="Change()" type="submit" style="background-color: #222; color: white; border-radius: 10px; font-size: 12px;">Hoàn thành</button>
+                                    </td>
+                                </tr>
+
+
+
+                                <!-- Phần hiển thị mặc định -->
+                                <!-- GIÀY ADIDAS SUPER COURT NỮ TRẮNG FULL -->
+                                <tr id="sp_20">
+                                    <!-- Ảnh sản phẩm -->
+                                    <td class="md">
+                                        <img class="w100 h-100" style="width: 75px; height: 75px !important;"
+                                            src="imgs/ADMIN/ADIDAS/20220303_dqJ7sPGR0kwaMWIeWsgzmklB.jpeg" alt="" id="image_20">
+                                    </td>
+
+                                    <!-- Tên sản phẩm -->
+                                    <td class="md_1">GIÀY ADIDAS SUPER COURT NỮ TRẮNG FULL</td>
+
+                                    <!-- Danh mục -->
+                                    <td class="md">Adidas</td>
+
+                                    <!-- Giá tiền -->
+                                    <td class="md">3.000.000 VND</td>
+
+                                    <!-- Màu sắc -->
+                                    <td class="md">TRẮNG</td>
+
+                                    <!-- Số lượng -->
+                                    <td class="md_1">20 đôi size 41, 20 đôi size 40,20 đôi size 39</td>
+
+                                    <!-- Nội dung -->
+                                    <td class="lg">
+                                        <p>Bạn đang tìm kiếm cho mình một đôi giày sẽ có thể trường tồn với thời gian, không bị lỗi mốt theo năm tháng. Adidas Super Court là 1 lựa chọn không nên bỏ lỡ . Kiểu dáng thiết kế trẻ trung, màu sắc tươi sắc nên Adidas Super Court sẽ là kiểu giày giúp bạn dễ dàng chuyển từ ''bánh bèo" sang '' cá tính'' trong một nốt nhạc.</p>
+                                    </td>
+
+                                    <!-- Nút thêm xoá sửa -->
+                                    <td>
+                                        <!-- Nút sửa -->
+                                        <button data-toggle="collapse" data-target="#demo6" class="accordion-toggle"
+                                            class="btn btn-default btn-xs" style="background: none; border: none;">
+                                            <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M495.9 166.6c3.2 8.7 .5 18.4-6.4 24.6l-43.3 39.4c1.1 8.3 1.7 16.8 1.7 25.4s-.6 17.1-1.7 25.4l43.3 39.4c6.9 6.2 9.6 15.9 6.4 24.6c-4.4 11.9-9.7 23.3-15.8 34.3l-4.7 8.1c-6.6 11-14 21.4-22.1 31.2c-5.9 7.2-15.7 9.6-24.5 6.8l-55.7-17.7c-13.4 10.3-28.2 18.9-44 25.4l-12.5 57.1c-2 9.1-9 16.3-18.2 17.8c-13.8 2.3-28 3.5-42.5 3.5s-28.7-1.2-42.5-3.5c-9.2-1.5-16.2-8.7-18.2-17.8l-12.5-57.1c-15.8-6.5-30.6-15.1-44-25.4L83.1 425.9c-8.8 2.8-18.6 .3-24.5-6.8c-8.1-9.8-15.5-20.2-22.1-31.2l-4.7-8.1c-6.1-11-11.4-22.4-15.8-34.3c-3.2-8.7-.5-18.4 6.4-24.6l43.3-39.4C64.6 273.1 64 264.6 64 256s.6-17.1 1.7-25.4L22.4 191.2c-6.9-6.2-9.6-15.9-6.4-24.6c4.4-11.9 9.7-23.3 15.8-34.3l4.7-8.1c6.6-11 14-21.4 22.1-31.2c5.9-7.2 15.7-9.6 24.5-6.8l55.7 17.7c13.4-10.3 28.2-18.9 44-25.4l12.5-57.1c2-9.1 9-16.3 18.2-17.8C227.3 1.2 241.5 0 256 0s28.7 1.2 42.5 3.5c9.2 1.5 16.2 8.7 18.2 17.8l12.5 57.1c15.8 6.5 30.6 15.1 44 25.4l55.7-17.7c8.8-2.8 18.6-.3 24.5 6.8c8.1 9.8 15.5 20.2 22.1 31.2l4.7 8.1c6.1 11 11.4 22.4 15.8 34.3zM256 336a80 80 0 1 0 0-160 80 80 0 1 0 0 160z"/></svg>
+                                        </button>
+                                        <br><br>
+                                        <button class="btn btn-default btn-xs" style="background: none; border: none;" id="delete" onclick="Delete_20()">
+                                            <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
+                                              </svg>
+                                              
+                                        </button>
+                                    </td>
+
+
+                                </tr>
+
+                                <!-- Phần sửa -->
+                                <tr class="accordian-body collapse" id="demo6">
+                                    <td class="md" style="vertical-align: middle;">
+                                        <button onclick="DeleteImg_20()" type="submit" style="background-color: #222; color: white; border-radius: 10px; font-size: 12px; font-weight: 700; width: 60px;">Xoá ảnh</button>
+                                        <br><br>
+                                        <input type="file" id="file" />
+                                        <label for="file" class="btn-2">upload</label>
+                                    </td>
+                                    <td class="md_1">
+                                        <textarea id="content" name="content" rows="5" cols="20"></textarea>
+                                    </td>
+                                    <td class="md">
+                                        <textarea id="content" name="content" rows="5" cols="20"></textarea>
+                                    </td>
+                                    <td class="md">
+                                        <textarea id="content" name="content" rows="5" cols="20"></textarea>
+                                    </td>
+                                    <td class="md">
+                                        <textarea id="content" name="content" rows="5" cols="20"></textarea>
+                                    </td>
+                                    <td class="md_1">
+                                        <textarea id="content" name="content" rows="5" cols="20"></textarea>
+                                    </td>
+                                    <td class="lg">
+                                        <textarea id="content" name="content" rows="5" cols="20"></textarea>
+                                    </td>
+                                    <td style="vertical-align: middle;">
+                                        <button onclick="Change()" type="submit" style="background-color: #222; color: white; border-radius: 10px; font-size: 12px;">Hoàn thành</button>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <div>
+                                <ul class="pagination">
+                                    
+                                    <li class="page-number"><a href="admin_page_1.html">1</a></li>
+                                    <li class="page-number"><a href="admin_page_2.html">2</a></li>
+                                    <li class="page-number"><a href="admin_page_3.html">3</a></li>
+                                    <li class="page-number active"><a href="#">4</a></li>
+                                    <li class="page-number"><a href="admin_page_5.html">5</a></li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+    </div>
+
+
+
+
+    <!-- =======scripts======= -->
+    <script src="js/main.js"></script>
+
+    <!-- =======ionicons======= -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+
+</html>

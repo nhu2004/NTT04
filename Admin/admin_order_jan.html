@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNEAKER-ADMIN</title>
+
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- FontAwsome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+
+    <!-- =========STYLE========== -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin_order.css">
+</head>
+
+<body style="background-color: #222;">
+    <!-- =========NAVIGATION========== -->
+    <div class="container-fluid">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="">
+                        <span class="icon"> <img src="imgs/405527018_720890046632552_6790314767571569590_n.jpg"
+                                width="60" height="60"></span> <!--style="width:500px;height:600px;-->
+                        <span class="title"> SNEAKER-ADMIN </span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="admin_state.html">
+                        <span class="icon">
+                            <ion-icon name="podium"></ion-icon>
+                        </span>
+                        <span class="title">Bảng điều khiển</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="admin_add.html">
+                        <span class="icon">
+                            <ion-icon name="bag-handle-outline"></ion-icon>
+                        </span>
+                        <span class="title">Quản lý sản phẩm</span> <!--Help-->
+                    </a>
+                </li>
+
+                <li>
+                    <a href="index2.html">
+                        <span class="icon">
+                            <ion-icon name="people-outline"></ion-icon>
+                        </span>
+                        <span class="title">Quản lý khách hàng </span> <!--Customers-->
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="admin_order.html">
+                        <span class="icon">
+
+                            <ion-icon name="cube-outline"></ion-icon>
+                        </span>
+                        <span class="title">Quản lý đơn hàng</span>
+                    </a>
+                </li>
+
+                <!-- <li>
+                        <a href ="">
+                            <span = class="icon"> 
+                                <ion-icon name="settings-outline"></ion-icon>
+                            </span>
+                            <span class="title">Setting </span>
+                        </a>
+                    </li> -->
+            </ul>
+        </div>
+
+
+
+        <!-- =======Main======= -->
+
+        <div class="main">
+            <div class="text-center mt-2 mb-3">
+                <h1>Quản Lý Khách Hàng</h1>
+            </div>
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+
+                <!--<div class="search">
+                            <label>
+                                <input type="text" placeholder="Search here">
+                                <ion-icon name="search-outline"></ion-icon>
+                            </label>
+                        </div>
+
+                       <div class="user">
+                            <img src="imgs/360_F_475009987_zwsk4c77x3cTpcI3W1C1LU4pOSyPKaqi.jpg" alt="">
+                        </div>  -->
+            </div>
+
+
+
+            <div class="container-fluid">
+                <div class="pb-3">
+                   <!-- <div class="p-2">
+                        <select name="" id="date">
+                            <option value="0">Chọn thời gian</option>
+                            <option value="Tháng 1 / 2023">Tháng 1 / 2023</option>
+                            <option value="Tháng 2 / 2023">Tháng 2 / 2023</option>
+                            <option value="Tháng 3 / 2023">Tháng 3 / 2023</option>
+                            <option value="Tháng 4 / 2023">Tháng 4 / 2023</option>
+                            <option value="Tháng 5 / 2023" selected>Tháng 5 / 2023</option>
+                            <option value="Tháng 6 / 2023">Tháng 6 / 2023</option>
+                            <option value="Tháng 7 / 2023">Tháng 7 / 2023</option>
+                            <option value="Tháng 8 / 2023">Tháng 8 / 2023</option>
+                            <option value="Tháng 9 / 2023">Tháng 9 / 2023</option>
+                            <option value="Tháng 10 / 2023">Tháng 10 / 2023</option>
+                            <option value="Tháng 11 / 2023">Tháng 11 / 2023</option>
+                            <option value="Tháng 12 / 2023">Tháng 12 / 2023</option>
+                        </select>
+                        <div class="p-2 d-inline" style="border: black solid 1px; border-radius: 5px;">
+                            <button type="submit" style="border: none;" onclick="submitChange()">Xác nhận</button>
+                        </div>-->
+                        
+                    </div>
+
+                    
+
+                    
+                    
+                    <div class="accordian-body">
+
+                        <table class="table table-bordered text-center">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col" class="sm">ID</th>
+                                    <th scope="col" class="md_1">Họ tên người nhận</th>
+                                    <th scope="col" class="md_1">Địa chỉ nhận hàng</th>
+                                    <th scope="col" class="md">Tổng tiền</th>
+                                    <th scope="col" class="md">Ngày đặt</th>
+                                    <th scope="col" class="sm">Tình trạng</th>
+                                    <th scope="col" class="md">Số sản phẩm</th>
+                                    <th scope="col" class="md_1">Ghi chú</th>
+                                    <th scope="col" class="sm">Chi tiết</th>
+                                    <th scope="col" class="sm">Xoá</th>
+    
+                                </tr>
+                            </thead>
+                        </table>
+
+                        <table class="table table-bordered">
+                            <tr id="sp_1">
+                                <td class="sm">
+                                    001
+                                </td>
+
+
+                                <!-- Tên người nhận -->
+                                <td class="md_1">
+                                    Nguyễn Đức Gia Bảo
+                                </td>
+
+                                <!-- Địa chỉ nhận hàng -->
+                                <td class="md_1">68B8 Đặng Nguyên Cẩn phường 14 quận 6 thành phố Hồ Chí Minh</td>
+
+                                <!-- Tổng tiền -->
+                                <td class="md">3,600,000 VND</td>
+
+                                <!-- Ngày đặt -->
+                                <td class="md">18/05/2023</td>
+                                
+                                <!-- Tình trạng đơn hàng -->
+                                <td class="sm">
+                                    <input type="checkbox" name="" id="" checked>
+                                </td>
+
+                                <!-- Số lượng -->
+                                <td class="md">3</td>
+
+                                <!-- Nội dung -->
+                                <td class="md_1">
+                                    <p>68B8 Đặng Nguyên Cẩn phường 14
+                                        quận 6 thành phố Hồ Chí
+                                        Minh</p>
+                                </td>
+
+                                <!-- Chi tiết -->
+                                <td class="sm">
+                                    <a href="" style="color: #222;">
+                                        <svg style="width: 30px; height: 30px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                                            <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z" clip-rule="evenodd" />
+                                          </svg>
+                                    </a>
+                                      
+                                </td>
+
+                                <!-- Nút thêm xoá sửa -->
+                                <td class="sm">
+                                    
+                                    <button class="btn btn-default btn-xs" style="background: none; border: none;" id="delete" onclick="Delete_1()">
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
+                                          </svg>
+                                          
+                                    </button>
+                                </td>
+
+
+                            </tr>
+
+                            <tr id="sp_2">
+                                <td class="sm">
+                                    002
+                                </td>
+
+
+                                <!-- Tên người nhận -->
+                                <td class="md_1">
+                                    Nguyễn Đức Gia Bảo
+                                </td>
+
+                                <!-- Địa chỉ nhận hàng -->
+                                <td class="md_1">68B8 Đặng Nguyên Cẩn phường 14 quận 6 thành phố Hồ Chí Minh</td>
+
+                                <!-- Tổng tiền -->
+                                <td class="md">2,200,000 VND</td>
+
+                                <!-- Ngày đặt -->
+                                <td class="md">25/05/2023</td>
+                                
+                                <!-- Tình trạng đơn hàng -->
+                                <td class="sm">
+                                    <input type="checkbox" name="" id="" checked>
+                                </td>
+
+                                <!-- Số lượng -->
+                                <td class="md">3</td>
+
+                                <!-- Nội dung -->
+                                <td class="md_1">
+                                    <p>68B8 Đặng Nguyên Cẩn phường 14
+                                        quận 6 thành phố Hồ Chí
+                                        Minh</p>
+                                </td>
+
+                                <!-- Chi tiết -->
+                                <td class="sm">
+                                    <a href="" style="color: #222;">
+                                        <svg style="width: 30px; height: 30px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                                            <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z" clip-rule="evenodd" />
+                                          </svg>
+                                    </a>
+                                      
+                                </td>
+
+                                <!-- Nút thêm xoá sửa -->
+                                <td class="sm">
+                                    
+                                    <button class="btn btn-default btn-xs" style="background: none; border: none;" id="delete" onclick="Delete_2()">
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
+                                          </svg>
+                                          
+                                    </button>
+                                </td>
+
+
+                            </tr>
+
+                            <tr id="sp_2">
+                                <td class="sm">
+                                    002
+                                </td>
+
+
+                                <!-- Tên người nhận -->
+                                <td class="md_1">
+                                    Nguyễn Đức Gia Bảo
+                                </td>
+
+                                <!-- Địa chỉ nhận hàng -->
+                                <td class="md_1">68B8 Đặng Nguyên Cẩn phường 14 quận 6 thành phố Hồ Chí Minh</td>
+
+                                <!-- Tổng tiền -->
+                                <td class="md">1,500,000 VND</td>
+
+                                <!-- Ngày đặt -->
+                                <td class="md">05/05/2023</td>
+                                
+                                <!-- Tình trạng đơn hàng -->
+                                <td class="sm">
+                                    <input type="checkbox" name="" id="" checked>
+                                </td>
+
+                                <!-- Số lượng -->
+                                <td class="md">3</td>
+
+                                <!-- Nội dung -->
+                                <td class="md_1">
+                                    <p>68B8 Đặng Nguyên Cẩn phường 14
+                                        quận 6 thành phố Hồ Chí
+                                        Minh</p>
+                                </td>
+
+                                <!-- Chi tiết -->
+                                <td class="sm">
+                                    <a href="" style="color: #222;">
+                                        <svg style="width: 30px; height: 30px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                                            <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z" clip-rule="evenodd" />
+                                          </svg>
+                                    </a>
+                                      
+                                </td>
+
+                                <!-- Nút thêm xoá sửa -->
+                                <td class="sm">
+                                    
+                                    <button class="btn btn-default btn-xs" style="background: none; border: none;" id="delete" onclick="Delete_2()">
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
+                                          </svg>
+                                          
+                                    </button>
+                                </td>
+
+
+                            </tr>
+                        </table>
+                    </div>
+
+
+                   
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+    </div>
+
+
+
+
+    <!-- =======scripts======= -->
+    <script src="js/main.js"></script>
+
+    <!-- =======ionicons======= -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script src="js/admin_guest.js"></script>
+    <script src="js/admin_order.js"></script>
+
+    <!-- =======jquery======= -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+
+</html>
