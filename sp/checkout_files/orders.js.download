@@ -1,0 +1,155 @@
+var $storeId = $('#storeId').val();
+$(function () {
+    Address.load('#customerCityId', '#customerDistrictId','#wardId');
+    CustomerShipFee.load('#customerCityId','#customerDistrictId','#shipFee', '#totalMoney', '#couponCode', '₫');
+    CheckCouponCode.load('#customerCityId','#customerDistrictId', '#couponCode','#getCoupon','#moneyCoupon','#shipFee', '#totalMoney');
+
+    if ($('body .validate').length){
+        $('.validate').validationEngine();
+    }
+
+    var isSubmited = false;
+    if (jQuery('.cartItem').length > 3 && window.innerWidth > 1024) {
+        $('.scrollModal').slimScroll({
+            height: 180,
+            alwaysVisible: true,
+            railVisible: true
+        });
+    }
+    $('body').on('click', '.removeCart', function () {
+        removeCart($(this).attr("data-psid"), true, function (rs) {
+            showSpinLoading();
+            location.reload();
+        });
+    });
+
+    $(document).on('click', '#formCheckout #showCarrier', function (e) {
+        e.preventDefault();
+        var tbl = $('#tableShipFee');
+        tbl.show();
+        $('html, body').animate({scrollTop: parseInt(tbl.offset().top)}, 'slow');
+    });
+
+    var valueOrder = $("#totalMoney").attr('value');
+    $('input[name="paymentMethod"]').click(function(){
+        var t = $(this), payMore = $(this).siblings('.payInfo').find('.payMore'), baokimId = $('#baokimBankPaymentMethodId');
+        baokimId.val('');
+        $('.payMore').not(payMore).slideUp(500);
+        payMore.slideDown('medium');
+        $('.transfer-monney__content, .slelect .b').slideUp();
+        $(this).parent().parent().next().slideDown();
+        baokimId.val(t.val());
+        if (t.hasClass('cod')) {
+            baokimId.val('cod');
+        }
+        if (t.hasClass('baokim')) {
+            baokimId.val('Baokim');
+        }
+        if (in_array($storeId, [103355,121530])) {
+            $(".payment-fee").addClass('d-none');
+            if (t.hasClass('onepay')) {
+                $(".payment-fee").removeClass('d-none');
+                $(".paymentFee").text($.number(t.attr('data-fee')) + '₫');
+                $("#totalMoney").attr('value',  parseInt(valueOrder) + parseInt(t.attr('data-fee')));
+            }else {
+                $("#totalMoney").attr('value',  valueOrder);
+            }
+        }
+    });
+
+    $('.transfer-monney__content>span').click(function () {
+        $('#baokimBankPaymentMethodId').val($(this).attr('baokimPmId'));
+        $('.transfer-monney__content>span').removeClass('active');
+        $(this).addClass('active');
+    });
+
+    var formCheckOut = $('form#formCheckout');
+
+    $('form#formCheckout .btn-checkout').on('click', function () {
+        if (formCheckOut.validationEngine('validate')) {
+            if (!$('#baokimBankPaymentMethodId').val()) {
+                alert(msgTransfers);
+                isSubmited = false;
+                return;
+            }
+
+            showSpinLoading();
+            var data = formCheckOut.serialize();
+            if (!isSubmited) {
+                AppAjax.post('/order/save?format=json', data,
+                    function (rs) {
+                        $.fancybox.close();
+                        if (rs.code) {
+                            isSubmited = true;
+                            if (rs.redirect) {
+                                window.location.href = rs.redirect;
+                            }
+                        } else {
+                            alert(rs.messages.join('\n'));
+                        }
+                    },
+                    'json'
+                );
+            }
+        }
+    });
+
+    $('.qtyminus_cart').click(function () {
+        var id = $(this).attr('psid');
+        var qttElement = $('.qty.product_' + id);
+        var m = parseInt(qttElement.attr('max'));
+        var v = parseInt(qttElement.attr('value'));
+        if (m < v) {
+            qttElement.attr('val', v-1);
+            // $('.qnt').html(v - 1);
+        }else{
+            if(m > v && v > 1){
+                qttElement.attr('value', v-1);
+                qttElement.html(v - 1);
+            }else if(m > v && v < 1){
+                qttElement.html('0');
+            }
+        }
+        var products = [
+            {id: id, quantity: v-1}
+        ];
+        addToCart(products, 2, function (rs) {
+            showSpinLoading();
+            location.reload();
+            // console.log(rs);
+        });
+    });
+
+
+    $('.qtyplus_cart').click(function () {
+        var id = $(this).attr('psid');
+        var qttElement = $('.qty.product_' + id);
+        var m = parseInt(qttElement.attr('max'));
+        var v = parseInt(qttElement.attr('value'));
+        if (v < m) {
+            qttElement.attr('value', v+1);
+            qttElement.html(v + 1);
+        }
+        else{
+            qttElement.attr('value', v+1);
+            qttElement.html(v + 1);
+        }
+        var products = [
+            {id: id, quantity: v+1}
+        ];
+        addToCart(products, 2, function (rs) {
+            showSpinLoading();
+            location.reload();
+            // console.log(rs);
+        });
+    });
+
+});
+
+function showSpinLoading() {
+    $(".waiting-spin-content-web").css({ "display": "flex" });
+}
+
+function hideSpinLoading() {
+    $(".waiting-spin-content-web").css({ "display": "" });
+}
