@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNEAKER-ADMIN</title>
+
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap_4.3.1_css_bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- FontAwsome -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Literata:wght@500;700&amp;family=Rubik:wght@400;500;700&amp;display=swap">
+    <link rel="stylesheet" href="css/pro.fontawesome.com_releases_v5.2.0_css_all.css">
+
+    <!-- =========STYLE========== -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/util.css">
+</head>
+
+<body style="background-color: #222;">
+    <div class="sweet-hover"> 
+    <div class="sweet-overlay" tabindex="-1" style="opacity: 1.12; display: block;"></div>
+    <div class="sweet-alert  showSweetAlert visible" tabindex="-1" data-custom-class="" data-has-cancel-button="false" data-has-confirm-button="true" data-allow-outside-click="false" data-has-done-function="false" data-animation="pop" data-timer="null" style="display: block; margin-top: -104px;"><div class="sa-icon sa-error" style="display: none;">
+        <span class="sa-x-mark">
+          <span class="sa-line sa-left"></span>
+          <span class="sa-line sa-right"></span>
+        </span>
+      </div><div class="sa-icon sa-warning" style="display: none;">
+        <span class="sa-body"></span>
+        <span class="sa-dot"></span>
+      </div><div class="sa-icon sa-info" style="display: none;"></div><div class="sa-icon sa-success" style="display: none;">
+        <span class="sa-line sa-tip"></span>
+        <span class="sa-line sa-long"></span>
+  
+        <div class="sa-placeholder"></div>
+        <div class="sa-fix"></div>
+      </div><div class="sa-icon sa-custom" style="display: none;"></div><h2>Xin Chào Admin</h2>
+      <p class="lead text-muted " style="display: block;">Chúc Bạn 1 Ngày Tốt Lành Nhé</p>
+      <div class="form-group">
+        <input type="text" class="form-control" tabindex="3" placeholder="">
+        <span class="sa-input-error help-block">
+          <span class="glyphicon glyphicon-exclamation-sign"></span> <span class="sa-help-text">Not valid</span>
+        </span>
+      </div><div class="sa-button-container">
+        <button class="cancel btn btn-lg btn-default" tabindex="2" style="display: none;">Cancel</button>
+        <div class="sa-confirm-button-container">
+          <button class="confirm btn btn-lg btn-primary" tabindex="1" style="display: inline-block;">OK</button><div class="la-ball-fall">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </div></div></div>
+      <script>
+        document.querySelector('.confirm').addEventListener('click', function() {
+            document.querySelector('.sweet-hover').style.display = 'none';
+        }); 
+    </script>
+    <!-- =========NAVIGATION========== -->
+    <div class="container-fluid">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="">
+                        <span class="icon"> <img src="imgs/405527018_720890046632552_6790314767571569590_n.jpg"
+                                width="60" height="60"></span> <!--style="width:500px;height:600px;-->
+                        <span class="title"> SNEAKER-ADMIN </span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="">
+                        <span class="icon">
+                            <ion-icon name="podium"></ion-icon>
+                        </span>
+                        <span class="title">Bảng thống kê</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="admin_add.html">
+                        <span class="icon">
+                            <ion-icon name="bag-handle-outline"></ion-icon>
+                        </span>
+                        <span class="title">Quản lý sản phẩm</span> <!--Help-->
+                    </a>
+                </li>
+
+                <li>
+                    <a href="index2.html" target="_self">
+                        <span class="icon">
+                            <ion-icon name="people-outline"></ion-icon>
+                        </span>
+                        <span class="title">Quản lý khách hàng </span> <!--Customers-->
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="admin_order.html">
+                        <span class="icon">
+
+                            <ion-icon name="cube-outline"></ion-icon>
+                        </span>
+                        <span class="title">Quản lý đơn hàng</span>
+                    </a>
+                </li>
+
+                <!-- <li>
+                        <a href ="">
+                            <span = class="icon"> 
+                                <ion-icon name="settings-outline"></ion-icon>
+                            </span>
+                            <span class="title">Setting </span>
+                        </a>
+                    </li> -->
+            </ul>
+        </div>
+
+
+
+        <!-- =======Main======= -->
+
+        <div class="main">
+            <div class="text-center mt-2 mb-3">
+                <h1>Quản Lý Sản Phẩm</h1>
+            </div>
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+            </div>
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container">
+                    <div class="collapse navbar-collapse" id="navbarResponsive">
+                        <ul class="navbar-nav ml-auto">
+                        
+                            <li class="nav-item">
+                                <a class="nav-link" href="admin_add.html" style="margin-top: 2.5px;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM232 344V280H168c-13.3 0-24-10.7-24-24s10.7-24 24-24h64V168c0-13.3 10.7-24 24-24s24 10.7 24 24v64h64c13.3 0 24 10.7 24 24s-10.7 24-24 24H280v64c0 13.3-10.7 24-24 24s-24-10.7-24-24z"/></svg>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="admin_change.html" style="margin-top: 2.5px;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M0 416c0 17.7 14.3 32 32 32l54.7 0c12.3 28.3 40.5 48 73.3 48s61-19.7 73.3-48L480 448c17.7 0 32-14.3 32-32s-14.3-32-32-32l-246.7 0c-12.3-28.3-40.5-48-73.3-48s-61 19.7-73.3 48L32 384c-17.7 0-32 14.3-32 32zm128 0a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zM320 256a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm32-80c-32.8 0-61 19.7-73.3 48L32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l246.7 0c12.3 28.3 40.5 48 73.3 48s61-19.7 73.3-48l54.7 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-54.7 0c-12.3-28.3-40.5-48-73.3-48zM192 128a32 32 0 1 1 0-64 32 32 0 1 1 0 64zm73.3-64C253 35.7 224.8 16 192 16s-61 19.7-73.3 48L32 64C14.3 64 0 78.3 0 96s14.3 32 32 32l86.7 0c12.3 28.3 40.5 48 73.3 48s61-19.7 73.3-48L480 128c17.7 0 32-14.3 32-32s-14.3-32-32-32L265.3 64z"/></svg>
+
+                                      
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+           
+
+
+
+            
+
+
+
+
+        </div>
+
+    </div>
+
+
+
+
+    <!-- =======scripts======= -->
+    <script src="js/main.js"></script>
+
+    <!-- =======ionicons======= -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+    <script src="css/sweetalert.min.js"></script>
+</body>
+
+</html>
