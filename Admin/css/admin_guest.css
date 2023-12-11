@@ -1,0 +1,13 @@
+.state-guest svg {
+    width: 15px;
+    height: 15px;
+}
+
+.guest {
+    border: solid 1px black;
+    text-align: center;
+}
+
+.main {
+    background: #f0f0f0 !important;
+}

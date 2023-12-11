@@ -1,0 +1,12 @@
+.state-guest svg {
+    width: 15px;
+    height: 15px;
+}
+
+.main {
+    background: #f0f0f0 !important;
+}
+
+.md, .md_1, .lg {
+    font-size: 12px;
+}
