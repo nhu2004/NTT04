@@ -1,0 +1,9 @@
+$(function () {
+
+    $('body').on('click', '.removeCart', function () {
+        removeCart($(this).attr("data-psid"), true, function (rs) {
+            showSpinLoading();
+            location.reload();
+        });
+    });
+});
